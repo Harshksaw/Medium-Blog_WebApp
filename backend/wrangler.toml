@@ -16,5 +16,6 @@ compatibility_date = "2023-12-01"
 # binding = "DB"
 # database_name = "my-database"
 # database_id = ""
+[vars]
 DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiNmYxNmNkNGQtN2UxNi00MzM0LTkyY2EtMWI2ZmQ5ODk1MDc4IiwidGVuYW50X2lkIjoiNzMxMTA3MzFhOWE2YWM5MGU1YjVhYzdlZjc5NDljZWQ3ZGVjZWFkY2ZkMDliYTNhYjFjODYwYWY3M2I1ZjBiMSIsImludGVybmFsX3NlY3JldCI6ImEzZTY0MmJkLTA3YjMtNDdlOS04NTBlLThhY2FiNjQxNDc4NSJ9.4WJmL_-3aiLTYQlDBTag-BPkKQ5-sGexYjInszdOBw4"
 JWT_SECRET="Harsh"
