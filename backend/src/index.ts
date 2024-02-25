@@ -11,6 +11,21 @@ import { PrismaClient } from '@prisma/client/edge'
 import { withAccelerate } from '@prisma/extension-accelerate'
 import { decode, sign, verify } from 'hono/jwt'
 
+app.use('/api/v1/blog/*', async (c ,next) => {
+  const header = c.req.header("authorization ") || "";
+  
+  const response =  await verify(header, c.env.JWT_SECRET)
+
+  if(response.id ) {
+
+    next()
+  }else {
+    c.status(403)
+    return c.json({ error: "unauthorized" })
+  }
+
+  await next()
+})
 
 app.get('/', (c) => {
   return c.text('Hello Hono!')

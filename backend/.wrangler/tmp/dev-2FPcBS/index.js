@@ -8419,6 +8419,17 @@ var sign2 = jwt_exports.sign;
 
 // src/index.ts
 var app = new Hono2();
+app.use("/api/v1/blog/*", async (c, next) => {
+  const header = c.req.header("authorization ") || "";
+  const response = await verify2(header, c.env.JWT_SECRET);
+  if (response.id) {
+    next();
+  } else {
+    c.status(403);
+    return c.json({ error: "unauthorized" });
+  }
+  await next();
+});
 app.get("/", (c) => {
   return c.text("Hello Hono!");
 });
