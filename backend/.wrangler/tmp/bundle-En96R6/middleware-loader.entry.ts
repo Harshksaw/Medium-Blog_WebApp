@@ -4,7 +4,7 @@
 // // through wrangler, or we can potentially let users directly add them as a sort
 // // of "plugin" system.
 
-import worker from "/Users/harshsaw/Documents/GitHub/Medium-Blog_WebApp/backend/.wrangler/tmp/bundle-tk12WC/middleware-insertion-facade.js";
+import worker from "/Users/harshsaw/Documents/GitHub/Medium-Blog_WebApp/backend/.wrangler/tmp/bundle-En96R6/middleware-insertion-facade.js";
 import {
 	__facade_invoke__,
 	__facade_register__,
@@ -13,7 +13,7 @@ import {
 } from "/Users/harshsaw/Documents/GitHub/Medium-Blog_WebApp/backend/node_modules/wrangler/templates/middleware/common.ts";
 
 // We need to preserve all of the exports from the worker
-export * from "/Users/harshsaw/Documents/GitHub/Medium-Blog_WebApp/backend/.wrangler/tmp/bundle-tk12WC/middleware-insertion-facade.js";
+export * from "/Users/harshsaw/Documents/GitHub/Medium-Blog_WebApp/backend/.wrangler/tmp/bundle-En96R6/middleware-insertion-facade.js";
 
 class __Facade_ScheduledController__ implements ScheduledController {
 	#noRetry: ScheduledController["noRetry"];

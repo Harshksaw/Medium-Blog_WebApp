@@ -13,7 +13,7 @@ interface Blog {
 }
 
 const Blogs = () => {
-  const { loading, blogs } = useBlogs<Blog>();
+  const { loading, blogs } = useBlogs();
 
   if (loading) {
     return (
