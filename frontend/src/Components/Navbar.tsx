@@ -21,7 +21,7 @@ const Navbar = () => {
       <div className="hidden md:flex space-x-4">
         {/* Use Link for navigation within React Router */}
         <Link to="/" className="text-gray-700 hover:text-blue-600">Home</Link>
-        <Link to="/blog" className="text-gray-700 hover:text-blue-600">Explore</Link>
+        <Link to="/blogs" className="text-gray-700 hover:text-blue-600">Explore</Link>
         <Link to="/about" className="text-gray-700 hover:text-blue-600">About Us</Link>
       </div>
       <div className="flex items-center space-x-2">

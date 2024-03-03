@@ -1,64 +1,45 @@
-import { useState } from "react";
 import BlogCard from "../Components/BlogCard";
 import BlogCardSkeleton from "../Components/Blogskeleton";
 import { useBlogs } from "../hooks";
 
+interface Blog {
+  content: string;
+
+  title: string;
+  id: number;
+  author: {
+    name: string;
+  };
+}
+
 const Blogs = () => {
-  const [loading, setLoading] = useBlogs();
+  const { loading, blogs } = useBlogs<Blog>();
 
-
-   
-      if(loading){
-        return (
-
-            <div className="flex justify-center mt-10">
-            <div className=" w-[50%]">
-
-        <BlogCardSkeleton/>
+  if (loading) {
+    return (
+      <div className="flex justify-center mt-10">
+        <div className=" w-[50%]">
+          <BlogCardSkeleton />
         </div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="flex justify-center mt-10">
+        <div className=" max-w-xl mt-20">
+          {blogs.map((blog) => (
+            <BlogCard
+              key={blog.title}
+              authorName={blog.author.name || "Anonymous"}
+              title={blog.title}
+              content={blog.content}
+              publishedDate={blog.publishedDate}
+            />
+          ))}
         </div>
-            )
-
-      }else
-      {
-        return(
-        <div className="flex justify-center">
-        <div className=" max-w-xl">
-          <BlogCard
-            authorName="John Doe"
-            title="My first blog"
-            content="This is my first blog. I am so excited to share my thoughts with you all."
-            publishedDate="2021-12-01"
-          />
-          <BlogCard
-            authorName="John Doe"
-            title="My first blog"
-            content="This is my first blog. I am so excited to share my thoughts with you all."
-            publishedDate="2021-12-01"
-          />
-          <BlogCard
-            authorName="John Doe"
-            title="My first blog"
-            content="This is my first blog. I am so excited to share my thoughts with you all."
-            publishedDate="2021-12-01"
-          />
-          <BlogCard
-            authorName="John Doe"
-            title="My first blog"
-            content="This is my first blog. I am so excited to share my thoughts with you all."
-            publishedDate="2021-12-01"
-          />
-          <BlogCard
-            authorName="John Doe"
-            title="My first blog"
-            content="This is my first blog. I am so excited to share my thoughts with you all."
-            publishedDate="2021-12-01"
-          />
-        </div>
-        </div>
-        )
-      }
-
+      </div>
+    );
+  }
 };
 
 export default Blogs;

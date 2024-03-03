@@ -1,21 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 interface BlogCardProps {
   authorName: string;
   title: string;
   content: string;
   publishedDate: string;
+  id: number;
 }
 
 const BlogCard = ({
+  id,
   authorName,
   title,
   content,
   publishedDate,
 }: BlogCardProps) => {
   return (
+
+    <Link to={`/blog/${id}`} className="group bg-slate-400  border-black border-[2px]  rounded-lg shadow-md overflow-hidden mb-6 md:mb-8 lg:mb-12 transition duration-300 hover:shadow-lg cursor-pointer">
+
     <div
-      className="group bg-white rounded-lg shadow-md overflow-hidden mb-6 md:mb-8 lg:mb-12 transition duration-300 hover:shadow-lg"
+      className="group bg-white rounded-lg shadow-md overflow-hidden mb-6 md:mb-8 lg:mb-12 transition duration-300 hover:shadow-lg cursor-pointer"
     >
     {/* <div className="bg-white rounded-lg shadow-md overflow-hidden mb-6 md:mb-8 lg:mb-12"> */}
       <div className="flex items-center p-4">
@@ -55,6 +61,7 @@ const BlogCard = ({
         </svg>
       </a>
     </div>
+    </Link>
   
   );
 };
@@ -86,5 +93,6 @@ export function Avatar({
         {name[0]}
       </span>
     </div>
+
   );
 }
