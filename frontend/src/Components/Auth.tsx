@@ -3,6 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { SignupInput } from "@100xdevs/medium-common";
 import axios from "axios";
+import { BACKEND_URL } from "../config";
+
+
 
 const Auth = ({ type }: { type:  "signup" | "signin" }) => {
     const navigate = useNavigate()
@@ -14,7 +17,7 @@ const Auth = ({ type }: { type:  "signup" | "signin" }) => {
 
     async function sendRequest(){
         try {
-            const response = await axios.post(`{BACKEND_URL}/api/v1/user/${type === 'signup' ? 'signup': 'signin' }`, postInputs);
+            const response = await axios.post(`${BACKEND_URL}/api/v1/user/${type === 'signup' ? 'signup': 'signin' }`, postInputs);
             const jwt = response.data;
             localStorage.setItem("token", jwt);
             navigate("/blogs")
