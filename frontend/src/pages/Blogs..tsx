@@ -1,9 +1,10 @@
 import { useState } from "react";
 import BlogCard from "../Components/BlogCard";
 import BlogCardSkeleton from "../Components/Blogskeleton";
+import { useBlogs } from "../hooks";
 
 const Blogs = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useBlogs();
 
 
    
