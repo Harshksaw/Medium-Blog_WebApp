@@ -1,5 +1,5 @@
 import Auth from '../Components/Auth'
-import React from 'react'
+
 import Quote from '../Components/Quote'
 
 const Signin = () => {

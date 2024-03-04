@@ -1,6 +1,6 @@
-import React from "react";
 
-const BlogPageSkeleton = ({ isLoading = true }) => {
+
+const BlogPageSkeleton = () => {
   return (
     <div className="flex justify-center">
     <div className="grid grid-cols-12 px-10 w-full pt-200 max-w-screen-xl pt-12">

@@ -5,9 +5,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import  Blog  from './pages/Blog'
 import  Signin  from './pages/Signin'
 import  Signup from './pages/Signup'
-import Blogs from './pages/Blogs.'
+import Blogs from './pages/Blogs'
 import Navbar from './Components/Navbar'
 import AboutUs from './Components/About'
+import HomePage from './pages/Home'
 
 function App() {
 
@@ -17,7 +18,8 @@ function App() {
 <BrowserRouter>
     <Navbar/>
         <Routes>
-
+          
+          <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />

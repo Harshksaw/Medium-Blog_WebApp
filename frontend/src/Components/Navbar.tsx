@@ -1,16 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Avatar } from './BlogCard';
+
 
 const Navbar = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Replace with actual login state logic
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    // Simulate fetching login status (replace with your logic)
-    // setTimeout(() => {
-    //   setIsLoggedIn(true);
 
-    // }, 10000);
+    if (localStorage.getItem('token')) {
+      console.log("token is present", localStorage.getItem('token'))
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+   
   }, []);
+
 
   return (
     <nav className="bg-white shadow-md fixed top-0 w-full z-50 flex items-center justify-between px-4 py-2 md:px-8">
@@ -37,11 +43,8 @@ const Navbar = () => {
           </>
         )}
         {isLoggedIn && (
-          <img
-            className="w-8 h-8 rounded-full object-cover"
-            src="https://via.placeholder.com/150" // Replace with avatar image logic
-            alt="Avatar"
-          />
+
+          <Avatar size="big" name="Anonymous" />
         )}
       </div>
     </nav>

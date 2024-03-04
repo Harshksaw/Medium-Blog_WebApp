@@ -1,6 +1,6 @@
 import Auth from '../Components/Auth'
 import Quote from '../Components/Quote'
-import React from 'react'
+
 
 const Signup = () => {
   return (

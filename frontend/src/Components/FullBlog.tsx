@@ -1,10 +1,10 @@
-import React from "react";
+
 import { Blog } from "../hooks";
 import { Avatar } from "./BlogCard";
 
 
 
-const FullBlog = ({ blog  }: {blog: Blog}) => {
+const FullBlog = ({ blog }: {blog: Blog}) => {
   return (
     <div className="flex justify-center">
       <div className="grid grid-cols-12 px-10 w-full pt-200 max-w-screen-xl pt-12">
@@ -12,7 +12,7 @@ const FullBlog = ({ blog  }: {blog: Blog}) => {
 
 
           {/* <div className="text-5xl font-extrabold">{blog.title}</div> */}
-          <div className="relative text-5xl font-extrabold h-full w-full overflow-hidden mb-2">
+          <div className="relative text-5xl font-extrabold h-[20%] w-full overflow-hidden mb-2">
             <div className="absolute inset-0 bg-gray-300 animate-pulse rounded-lg ">
 
             <span className="bg-gradient-to-r from-slate-400 to-slate-200 inline-block py-1 px-2 relative z-10 rounded-lg">
@@ -28,7 +28,7 @@ const FullBlog = ({ blog  }: {blog: Blog}) => {
         <div className="col-span-4 ml-2 pl-2">
           <div className="text-slate-600 text-2xl ml-10 m-5 p-5">Author</div>
           <div className="flex w-full">
-            {/* Author avatar with styling */}
+
             <div className="pr-4 flex flex-col justify-center">
               <div className="h-16 w-16 rounded-full bg-gray-300 animate-pulse  flex items-center justify-center">
 
